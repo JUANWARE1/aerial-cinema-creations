@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { ThemeProvider } from '@/contexts/ThemeContext';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -13,19 +12,17 @@ import FloatingContact from '@/components/FloatingContact';
 
 const Index = () => {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-drone-dark text-white">
-        <Navigation />
-        <HeroSection />
-        <ServicesSection />
-        <GallerySection />
-        <PackagesSection />
-        <MapSection />
-        <ContactSection />
-        <Footer />
-        <FloatingContact />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen bg-drone-dark text-white">
+      <Navigation />
+      <HeroSection />
+      <ServicesSection />
+      <GallerySection />
+      <PackagesSection />
+      <MapSection />
+      <ContactSection />
+      <Footer />
+      <FloatingContact />
+    </div>
   );
 };
 
