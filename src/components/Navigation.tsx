@@ -4,12 +4,14 @@ import { Menu, X, Sun, Moon, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from '@/utils/translations';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, language, toggleTheme, toggleLanguage } = useTheme();
   const t = useTranslation(language);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,13 +23,20 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = [
-    { key: 'home', href: '#home' },
-    { key: 'services', href: '#services' },
-    { key: 'gallery', href: '#gallery' },
-    { key: 'packages', href: '#packages' },
-    { key: 'blog', href: '#blog' },
-    { key: 'contact', href: '#contact' }
+    { key: 'home', href: '/', path: '/' },
+    { key: 'services', href: '/#services', path: '/#services' },
+    { key: 'gallery', href: '/gallery', path: '/gallery' },
+    { key: 'packages', href: '/packages', path: '/packages' },
+    { key: 'blog', href: '/blog', path: '/blog' },
+    { key: 'contact', href: '/#contact', path: '/#contact' }
   ];
+
+  const isActive = (item: typeof navItems[0]) => {
+    if (item.path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname === item.path;
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -39,23 +48,42 @@ const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#home" className="text-2xl font-cinematic font-bold text-white hover:text-drone-light transition-colors">
+            <Link to="/" className="text-2xl font-cinematic font-bold text-white hover:text-drone-light transition-colors">
               SkyVision<span className="text-drone-light">Pro</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  className="text-drone-light hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
-                >
-                  {t.nav[item.key as keyof typeof t.nav]}
-                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-drone-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
-                </a>
+                item.href.startsWith('/#') ? (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 relative group ${
+                      isActive(item) ? 'text-white' : 'text-drone-light hover:text-white'
+                    }`}
+                  >
+                    {t.nav[item.key as keyof typeof t.nav]}
+                    <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-drone-light transform transition-transform duration-200 ${
+                      isActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}></span>
+                  </a>
+                ) : (
+                  <Link
+                    key={item.key}
+                    to={item.href}
+                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 relative group ${
+                      isActive(item) ? 'text-white' : 'text-drone-light hover:text-white'
+                    }`}
+                  >
+                    {t.nav[item.key as keyof typeof t.nav]}
+                    <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-drone-light transform transition-transform duration-200 ${
+                      isActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}></span>
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -115,14 +143,25 @@ const Navigation: React.FC = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-drone-dark/95 backdrop-blur-md rounded-lg mt-2">
               {navItems.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  className="text-drone-light hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t.nav[item.key as keyof typeof t.nav]}
-                </a>
+                item.href.startsWith('/#') ? (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    className="text-drone-light hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t.nav[item.key as keyof typeof t.nav]}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.key}
+                    to={item.href}
+                    className="text-drone-light hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t.nav[item.key as keyof typeof t.nav]}
+                  </Link>
+                )
               ))}
             </div>
           </div>

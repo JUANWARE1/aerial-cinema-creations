@@ -6,6 +6,7 @@ import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import GallerySection from '@/components/GallerySection';
 import PackagesSection from '@/components/PackagesSection';
+import MapSection from '@/components/MapSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingContact from '@/components/FloatingContact';
@@ -19,6 +20,7 @@ const Index = () => {
         <ServicesSection />
         <GallerySection />
         <PackagesSection />
+        <MapSection />
         <ContactSection />
         <Footer />
         <FloatingContact />
