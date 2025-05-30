@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import Videos from "./pages/Videos";
 import Gallery from "./pages/Gallery";
-import Packages from "./pages/Packages";
+import Quote from "./pages/Quote";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
@@ -25,7 +25,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/packages" element={<Packages />} />
+            <Route path="/quote" element={<Quote />} />
             <Route path="/blog" element={<Blog />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import GallerySection from '@/components/GallerySection';
-import PackagesSection from '@/components/PackagesSection';
+import QuoteCalculator from '@/components/QuoteCalculator';
 import MapSection from '@/components/MapSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -17,7 +17,7 @@ const Index = () => {
       <HeroSection />
       <ServicesSection />
       <GallerySection />
-      <PackagesSection />
+      <QuoteCalculator />
       <MapSection />
       <ContactSection />
       <Footer />

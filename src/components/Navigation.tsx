@@ -26,7 +26,7 @@ const Navigation: React.FC = () => {
     { key: 'home', href: '/', path: '/' },
     { key: 'services', href: '/#services', path: '/#services' },
     { key: 'gallery', href: '/gallery', path: '/gallery' },
-    { key: 'packages', href: '/packages', path: '/packages' },
+    { key: 'quote', href: '/quote', path: '/quote' },
     { key: 'blog', href: '/blog', path: '/blog' },
     { key: 'contact', href: '/#contact', path: '/#contact' }
   ];
@@ -65,7 +65,7 @@ const Navigation: React.FC = () => {
                       isActive(item) ? 'text-white' : 'text-drone-light hover:text-white'
                     }`}
                   >
-                    {t.nav[item.key as keyof typeof t.nav]}
+                    {item.key === 'quote' ? 'Cotizar' : t.nav[item.key as keyof typeof t.nav]}
                     <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-drone-light transform transition-transform duration-200 ${
                       isActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                     }`}></span>
@@ -78,7 +78,7 @@ const Navigation: React.FC = () => {
                       isActive(item) ? 'text-white' : 'text-drone-light hover:text-white'
                     }`}
                   >
-                    {t.nav[item.key as keyof typeof t.nav]}
+                    {item.key === 'quote' ? 'Cotizar' : t.nav[item.key as keyof typeof t.nav]}
                     <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-drone-light transform transition-transform duration-200 ${
                       isActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                     }`}></span>
@@ -150,7 +150,7 @@ const Navigation: React.FC = () => {
                     className="text-drone-light hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t.nav[item.key as keyof typeof t.nav]}
+                    {item.key === 'quote' ? 'Cotizar' : t.nav[item.key as keyof typeof t.nav]}
                   </a>
                 ) : (
                   <Link
@@ -159,7 +159,7 @@ const Navigation: React.FC = () => {
                     className="text-drone-light hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t.nav[item.key as keyof typeof t.nav]}
+                    {item.key === 'quote' ? 'Cotizar' : t.nav[item.key as keyof typeof t.nav]}
                   </Link>
                 )
               ))}
