@@ -5,6 +5,7 @@ export const translations = {
       home: 'Inicio',
       services: 'Servicios',
       gallery: 'Galería',
+      videos: 'Galería de Videos',
       packages: 'Paquetes',
       blog: 'Blog',
       contact: 'Contacto'
@@ -89,6 +90,7 @@ export const translations = {
       home: 'Home',
       services: 'Services',
       gallery: 'Gallery',
+      videos: 'Video Gallery',
       packages: 'Packages',
       blog: 'Blog',
       contact: 'Contact'
