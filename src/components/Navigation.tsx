@@ -26,7 +26,7 @@ const Navigation: React.FC = () => {
     { key: 'home', href: '/', path: '/' },
     { key: 'services', href: '/#services', path: '/#services' },
     { key: 'gallery', href: '/gallery', path: '/gallery' },
-    { key: 'quote', href: '/quote', path: '/quote' },
+    { key: 'videos', href: '/videos', path: '/videos' },
     { key: 'blog', href: '/blog', path: '/blog' },
     { key: 'contact', href: '/#contact', path: '/#contact' }
   ];
@@ -48,8 +48,20 @@ const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-cinematic font-bold text-white hover:text-drone-light transition-colors">
-              SkyVision<span className="text-drone-light">Pro</span>
+            <Link to="/" className="block">
+              {theme === 'light' ? (
+                <img 
+                  src="/lovable-uploads/1d7e4517-4341-4659-bf36-341a000d5556.png" 
+                  alt="Zephyr DronMX" 
+                  className="h-10 md:h-12 w-auto"
+                />
+              ) : (
+                <img 
+                  src="/lovable-uploads/498563c0-ac4c-4d4b-87af-788f9615161d.png" 
+                  alt="Zephyr DronMX" 
+                  className="h-10 md:h-12 w-auto"
+                />
+              )}
             </Link>
           </div>
 
@@ -65,7 +77,7 @@ const Navigation: React.FC = () => {
                       isActive(item) ? 'text-white' : 'text-drone-light hover:text-white'
                     }`}
                   >
-                    {item.key === 'quote' ? 'Cotizar' : t.nav[item.key as keyof typeof t.nav]}
+                    {t.nav[item.key as keyof typeof t.nav]}
                     <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-drone-light transform transition-transform duration-200 ${
                       isActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                     }`}></span>
@@ -78,7 +90,7 @@ const Navigation: React.FC = () => {
                       isActive(item) ? 'text-white' : 'text-drone-light hover:text-white'
                     }`}
                   >
-                    {item.key === 'quote' ? 'Cotizar' : t.nav[item.key as keyof typeof t.nav]}
+                    {t.nav[item.key as keyof typeof t.nav]}
                     <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-drone-light transform transition-transform duration-200 ${
                       isActive(item) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                     }`}></span>
@@ -150,7 +162,7 @@ const Navigation: React.FC = () => {
                     className="text-drone-light hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {item.key === 'quote' ? 'Cotizar' : t.nav[item.key as keyof typeof t.nav]}
+                    {t.nav[item.key as keyof typeof t.nav]}
                   </a>
                 ) : (
                   <Link
@@ -159,7 +171,7 @@ const Navigation: React.FC = () => {
                     className="text-drone-light hover:text-white block px-3 py-2 text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {item.key === 'quote' ? 'Cotizar' : t.nav[item.key as keyof typeof t.nav]}
+                    {t.nav[item.key as keyof typeof t.nav]}
                   </Link>
                 )
               ))}

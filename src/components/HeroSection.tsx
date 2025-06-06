@@ -23,15 +23,6 @@ const HeroSection: React.FC = () => {
           
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-drone-dark/90 via-drone-dark/70 to-transparent"></div>
-          
-          {/* Floating drone image */}
-          <div className="absolute top-1/4 right-1/4 hidden lg:block">
-            <img
-              src="/lovable-uploads/cee53865-9bbb-4cd9-b90b-4726b8bab2f7.png"
-              alt="Drone in action"
-              className="w-64 h-48 object-cover rounded-lg shadow-2xl opacity-80 animate-float"
-            />
-          </div>
         </div>
       </div>
 
