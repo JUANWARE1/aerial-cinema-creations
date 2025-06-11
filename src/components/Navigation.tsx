@@ -45,14 +45,14 @@ const Navigation: React.FC = () => {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="block">
               <img 
                 src="/lovable-uploads/498563c0-ac4c-4d4b-87af-788f9615161d.png" 
                 alt="Zephyr DronMX" 
-                className="h-10 md:h-12 w-auto"
+                className="h-16 md:h-20 w-auto"
               />
             </Link>
           </div>
