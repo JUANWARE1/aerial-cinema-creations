@@ -19,56 +19,56 @@ const Videos: React.FC = () => {
       id: 1,
       title: 'DJI Mini 4 Pro - Demo Reel Profesional',
       thumbnail: '/lovable-uploads/501c3f4f-5927-4335-b524-f1113c74777c.png',
-      videoId: 'dQw4w9WgXcQ',
+      videoId: 'b0FB2OWPN08',
       category: 'Demo',
-      duration: '2:30',
+      duration: '0:12',
       description: 'Showcase completo de las capacidades del DJI Mini 4 Pro en diferentes escenarios'
     },
-    {
-      id: 2,
-      title: 'Cobertura Aérea de Bodas - Portfolio',
-      thumbnail: '/lovable-uploads/bb05e63d-b8f3-4280-b786-aff9e95a7740.png',
-      videoId: 'dQw4w9WgXcQ',
-      category: 'Bodas',
-      duration: '4:15',
-      description: 'Los momentos más emotivos capturados desde las alturas'
-    },
-    {
-      id: 3,
-      title: 'Videos Inmobiliarios de Lujo',
-      thumbnail: '/lovable-uploads/c0d7f20b-adc1-486e-b72b-6d86e34952fe.png',
-      videoId: 'dQw4w9WgXcQ',
-      category: 'Inmobiliario',
-      duration: '3:45',
-      description: 'Presentación cinematográfica de propiedades exclusivas'
-    },
-    {
-      id: 4,
-      title: 'Video Corporativo Empresarial',
-      thumbnail: '/lovable-uploads/cee53865-9bbb-4cd9-b90b-4726b8bab2f7.png',
-      videoId: 'dQw4w9WgXcQ',
-      category: 'Corporativo',
-      duration: '5:20',
-      description: 'Promocionales corporativos con tomas aéreas impactantes'
-    },
-    {
-      id: 5,
-      title: 'Documentales de Naturaleza',
-      thumbnail: '/lovable-uploads/fe6b0dae-fc37-4ccd-b965-00f601f11e2d.png',
-      videoId: 'dQw4w9WgXcQ',
-      category: 'Naturaleza',
-      duration: '6:10',
-      description: 'Captura la belleza natural desde perspectivas únicas'
-    },
-    {
-      id: 6,
-      title: 'Eventos Deportivos Extremos',
-      thumbnail: '/lovable-uploads/501c3f4f-5927-4335-b524-f1113c74777c.png',
-      videoId: 'dQw4w9WgXcQ',
-      category: 'Deportes',
-      duration: '3:30',
-      description: 'Adrenalina pura capturada en 4K'
-    }
+    // {
+    //   id: 2,
+    //   title: 'Cobertura Aérea de Bodas - Portfolio',
+    //   thumbnail: '/lovable-uploads/bb05e63d-b8f3-4280-b786-aff9e95a7740.png',
+    //   videoId: 'dQw4w9WgXcQ',
+    //   category: 'Bodas',
+    //   duration: '4:15',
+    //   description: 'Los momentos más emotivos capturados desde las alturas'
+    // },
+    // {
+    //   id: 3,
+    //   title: 'Videos Inmobiliarios de Lujo',
+    //   thumbnail: '/lovable-uploads/c0d7f20b-adc1-486e-b72b-6d86e34952fe.png',
+    //   videoId: 'dQw4w9WgXcQ',
+    //   category: 'Inmobiliario',
+    //   duration: '3:45',
+    //   description: 'Presentación cinematográfica de propiedades exclusivas'
+    // },
+    // {
+    //   id: 4,
+    //   title: 'Video Corporativo Empresarial',
+    //   thumbnail: '/lovable-uploads/cee53865-9bbb-4cd9-b90b-4726b8bab2f7.png',
+    //   videoId: 'dQw4w9WgXcQ',
+    //   category: 'Corporativo',
+    //   duration: '5:20',
+    //   description: 'Promocionales corporativos con tomas aéreas impactantes'
+    // },
+    // {
+    //   id: 5,
+    //   title: 'Documentales de Naturaleza',
+    //   thumbnail: '/lovable-uploads/fe6b0dae-fc37-4ccd-b965-00f601f11e2d.png',
+    //   videoId: 'dQw4w9WgXcQ',
+    //   category: 'Naturaleza',
+    //   duration: '6:10',
+    //   description: 'Captura la belleza natural desde perspectivas únicas'
+    // },
+    // {
+    //   id: 6,
+    //   title: 'Eventos Deportivos Extremos',
+    //   thumbnail: '/lovable-uploads/501c3f4f-5927-4335-b524-f1113c74777c.png',
+    //   videoId: 'dQw4w9WgXcQ',
+    //   category: 'Deportes',
+    //   duration: '3:30',
+    //   description: 'Adrenalina pura capturada en 4K'
+    // }
   ];
 
   const categories = [
@@ -218,7 +218,7 @@ const Videos: React.FC = () => {
             <div className="max-w-5xl mx-auto">
               <div className="relative aspect-video rounded-3xl overflow-hidden bg-drone-gray/10 shadow-2xl">
                 <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+                 src="https://www.youtube.com/embed/b0FB2OWPN08"
                   title="Featured Video"
                   className="w-full h-full rounded-3xl"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -265,7 +265,7 @@ const Videos: React.FC = () => {
       )}
 
       <Footer />
-      <FloatingContact />
+    
     </div>
   );
 };

@@ -182,26 +182,7 @@ const Blog: React.FC = () => {
           </div>
 
           {/* Newsletter Section */}
-          <div className="mt-20 text-center">
-            <div className="max-w-2xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-drone-gray/10 to-drone-light/10 backdrop-blur-sm border border-drone-light/20">
-              <h3 className="text-2xl font-cinematic font-bold text-white mb-4">
-                Suscríbete a nuestro newsletter
-              </h3>
-              <p className="text-drone-light mb-6">
-                Recibe las últimas noticias, técnicas y consejos del mundo de los drones directamente en tu email.
-              </p>
-              <div className="flex gap-4 max-w-md mx-auto">
-                <Input
-                  type="email"
-                  placeholder="Tu email..."
-                  className="bg-drone-gray/20 border-drone-gray/30 text-white placeholder:text-drone-gray"
-                />
-                <Button className="bg-drone-light text-drone-dark hover:bg-white">
-                  Suscribirse
-                </Button>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </section>
 

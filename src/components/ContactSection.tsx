@@ -34,26 +34,26 @@ const ContactSection: React.FC = () => {
     {
       icon: Phone,
       title: 'Teléfono',
-      value: '+1 (555) 123-4567',
-      action: 'tel:+15551234567'
+      value: '+52 3321998403',
+      action: 'tel:+523321998403'
     },
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@skyvisionpro.com',
-      action: 'mailto:info@skyvisionpro.com'
+      value: 'udigitalb.contacto@gmail.com',
+      action: 'mailto:udigitalb.contacto@gmail.com'
     },
     {
       icon: MapPin,
       title: 'Ubicación',
-      value: 'Ciudad de México, México',
+      value: 'Guadalajara Jal, México',
       action: '#'
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      value: '+52 55 1234 5678',
-      action: 'https://wa.me/5255123445678'
+      value: '+52 3321998403',
+      action: 'https://wa.me/523321998403'
     }
   ];
 

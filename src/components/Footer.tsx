@@ -9,10 +9,10 @@ const Footer: React.FC = () => {
   const t = useTranslation(language);
 
   const socialLinks = [
-    { name: 'Instagram', url: '#', icon: '📷' },
-    { name: 'YouTube', url: '#', icon: '📹' },
-    { name: 'Facebook', url: '#', icon: '📘' },
-    { name: 'TikTok', url: '#', icon: '🎵' }
+    { name: 'Instagram', url: 'https://www.instagram.com/zephyr.dronmx/',  target: '_blank', icon: '📷' },
+    { name: 'YouTube', url: 'https://www.youtube.com/@ZephirDronMX',  target: '_blank', icon: '📹' },
+    { name: 'Facebook', url: '#',  target: '_blank', icon: '📘' },
+    { name: 'TikTok', url: '#',  target: '_blank', icon: '🎵' }
   ];
 
   const quickLinks = [
@@ -43,15 +43,15 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center text-drone-light">
                 <Mail className="h-5 w-5 mr-3" />
-                <span>info@zephyrdronmx.com</span>
+                <span>udigitalb.contacto@gmail.com</span>
               </div>
               <div className="flex items-center text-drone-light">
                 <Phone className="h-5 w-5 mr-3" />
-                <span>+1 (555) 123-4567</span>
+                <span>(+52) 33-21-99-84-03</span>
               </div>
               <div className="flex items-center text-drone-light">
                 <MapPin className="h-5 w-5 mr-3" />
-                <span>Ciudad de México, México</span>
+                <span>Guadalajara Jal, México</span>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <h5 className="text-white font-medium mb-3">Newsletter</h5>
               <p className="text-drone-light text-sm mb-4">
                 Recibe tips y novedades sobre drones
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
                   ✓
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

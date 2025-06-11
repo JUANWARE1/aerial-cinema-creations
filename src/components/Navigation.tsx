@@ -49,11 +49,11 @@ const Navigation: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="block">
-              <img 
-                src="/lovable-uploads/498563c0-ac4c-4d4b-87af-788f9615161d.png" 
-                alt="ZEPHYR" 
-                className="h-20 md:h-24 w-auto"
-              />
+            <img 
+              src="/lovable-uploads/logo-zephyr.png" 
+              alt="ZEPHYR" 
+              className="h-28 md:h-32 w-auto"
+            />
             </Link>
           </div>
 

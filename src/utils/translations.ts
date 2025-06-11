@@ -110,9 +110,9 @@ export const translations = {
       description: 'Servicios profesionales de dron con tecnología DJI Mini 4 Pro'
     },
     stats: {
-      projects: 'Proyectos Completados',
+      projects: 'Eventos Cubiertos',
       quality: 'Calidad Ultra HD',
-      delivery: 'Entrega Rápida',
+      delivery: 'Horas de video grabadas',
       satisfaction: 'Satisfacción'
     }
   },
@@ -226,9 +226,9 @@ export const translations = {
       description: 'Professional drone services with DJI Mini 4 Pro technology'
     },
     stats: {
-      projects: 'Completed Projects',
+      projects: 'Events covered',
       quality: 'Ultra HD Quality',
-      delivery: 'Fast Delivery',
+      delivery: 'Hours of video recorded',
       satisfaction: 'Satisfaction'
     }
   }

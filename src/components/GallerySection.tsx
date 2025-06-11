@@ -4,6 +4,8 @@ import { Play, ZoomIn, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from '@/utils/translations';
+import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const GallerySection: React.FC = () => {
   const { language } = useTheme();
@@ -78,20 +80,20 @@ const GallerySection: React.FC = () => {
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
-              <Button
-                key={category.key}
-                variant={activeCategory === category.key ? "default" : "outline"}
-                onClick={() => setActiveCategory(category.key)}
-                className={`
-                  px-6 py-2 rounded-full transition-all duration-300
-                  ${activeCategory === category.key 
-                    ? 'bg-drone-light text-drone-dark' 
-                    : 'border-drone-light/30 text-drone-light hover:bg-drone-light/10'
-                  }
-                `}
-              >
-                {category.label}
-              </Button>
+             <Button
+             key={category.key}
+             onClick={() => setActiveCategory(category.key)}
+             className={cn(
+               "px-6 py-2 rounded-full transition-all duration-300 text-sm font-medium",
+               activeCategory === category.key
+                 ? "bg-drone-light text-drone-dark"
+                 : "bg-white text-drone-dark hover:bg-drone-light/90"
+             )}
+           >
+             {category.label}
+           </Button>
+           
+           
             ))}
           </div>
         </div>
@@ -159,13 +161,15 @@ const GallerySection: React.FC = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <Button
-            size="lg"
-            className="bg-drone-light text-drone-dark hover:bg-white transition-all duration-300 text-lg px-8 py-4"
-          >
-            {t.gallery.viewPortfolio}
-          </Button>
-        </div>
+  <Link to="/Gallery">
+    <Button
+      size="lg"
+      className="bg-drone-light text-drone-dark hover:bg-white transition-all duration-300 text-lg px-8 py-4"
+    >
+      {t.gallery.viewPortfolio}
+    </Button>
+  </Link>
+</div>
       </div>
     </section>
   );
