@@ -47,7 +47,32 @@ export const translations = {
     },
     gallery: {
       title: 'Galería de Proyectos',
-      subtitle: 'Descubre la calidad cinematográfica de nuestro trabajo'
+      subtitle: 'Descubre la calidad cinematográfica de nuestro trabajo',
+      all: 'Todos',
+      equipment: 'Equipo',
+      city: 'Ciudad',
+      events: 'Eventos',
+      nature: 'Naturaleza',
+      technical: 'Técnico',
+      viewPortfolio: 'Ver Portafolio Completo'
+    },
+    videos: {
+      title: 'Galería de Videos',
+      subtitle: 'Descubre nuestro trabajo más reciente y experimenta la calidad cinematográfica que ofrecemos',
+      featuredTitle: 'Video Destacado del Mes',
+      featuredVideoTitle: 'Zephyr DronMX - Reel Cinematográfico 2024',
+      featuredDescription: 'Una muestra de nuestros mejores trabajos realizados durante este año, demostrando la calidad cinematográfica y profesionalismo que nos caracteriza.',
+      watchVideo: 'Ver Video',
+      close: 'Cerrar',
+      categories: {
+        all: 'Todos',
+        demo: 'Demo',
+        weddings: 'Bodas',
+        realEstate: 'Inmobiliario',
+        corporate: 'Corporativo',
+        nature: 'Naturaleza',
+        sports: 'Deportes'
+      }
     },
     packages: {
       title: 'Paquetes y Precios',
@@ -83,6 +108,12 @@ export const translations = {
     footer: {
       rights: 'Todos los derechos reservados.',
       description: 'Servicios profesionales de dron con tecnología DJI Mini 4 Pro'
+    },
+    stats: {
+      projects: 'Proyectos Completados',
+      quality: 'Calidad Ultra HD',
+      delivery: 'Entrega Rápida',
+      satisfaction: 'Satisfacción'
     }
   },
   en: {
@@ -132,7 +163,32 @@ export const translations = {
     },
     gallery: {
       title: 'Project Gallery',
-      subtitle: 'Discover the cinematic quality of our work'
+      subtitle: 'Discover the cinematic quality of our work',
+      all: 'All',
+      equipment: 'Equipment',
+      city: 'City',
+      events: 'Events',
+      nature: 'Nature',
+      technical: 'Technical',
+      viewPortfolio: 'View Complete Portfolio'
+    },
+    videos: {
+      title: 'Video Gallery',
+      subtitle: 'Discover our latest work and experience the cinematic quality we offer',
+      featuredTitle: 'Featured Video of the Month',
+      featuredVideoTitle: 'Zephyr DronMX - Cinematic Reel 2024',
+      featuredDescription: 'A showcase of our best work done this year, demonstrating the cinematic quality and professionalism that characterizes us.',
+      watchVideo: 'Watch Video',
+      close: 'Close',
+      categories: {
+        all: 'All',
+        demo: 'Demo',
+        weddings: 'Weddings',
+        realEstate: 'Real Estate',
+        corporate: 'Corporate',
+        nature: 'Nature',
+        sports: 'Sports'
+      }
     },
     packages: {
       title: 'Packages & Pricing',
@@ -168,6 +224,12 @@ export const translations = {
     footer: {
       rights: 'All rights reserved.',
       description: 'Professional drone services with DJI Mini 4 Pro technology'
+    },
+    stats: {
+      projects: 'Completed Projects',
+      quality: 'Ultra HD Quality',
+      delivery: 'Fast Delivery',
+      satisfaction: 'Satisfaction'
     }
   }
 };

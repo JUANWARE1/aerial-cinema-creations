@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Globe } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from '@/utils/translations';
@@ -9,7 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, language, toggleTheme, toggleLanguage } = useTheme();
+  const { language, toggleLanguage } = useTheme();
   const t = useTranslation(language);
   const location = useLocation();
 
@@ -49,19 +49,11 @@ const Navigation: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="block">
-              {theme === 'light' ? (
-                <img 
-                  src="/lovable-uploads/1d7e4517-4341-4659-bf36-341a000d5556.png" 
-                  alt="Zephyr DronMX" 
-                  className="h-10 md:h-12 w-auto"
-                />
-              ) : (
-                <img 
-                  src="/lovable-uploads/498563c0-ac4c-4d4b-87af-788f9615161d.png" 
-                  alt="Zephyr DronMX" 
-                  className="h-10 md:h-12 w-auto"
-                />
-              )}
+              <img 
+                src="/lovable-uploads/498563c0-ac4c-4d4b-87af-788f9615161d.png" 
+                alt="Zephyr DronMX" 
+                className="h-10 md:h-12 w-auto"
+              />
             </Link>
           </div>
 
@@ -100,16 +92,8 @@ const Navigation: React.FC = () => {
             </div>
           </div>
 
-          {/* Theme and Language Controls */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleTheme}
-              className="text-drone-light hover:text-white hover:bg-drone-gray/20"
-            >
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-            </Button>
+          {/* Language Control */}
+          <div className="hidden md:flex items-center">
             <Button
               variant="ghost"
               size="sm"
@@ -123,14 +107,6 @@ const Navigation: React.FC = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleTheme}
-              className="text-drone-light hover:text-white"
-            >
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-            </Button>
             <Button
               variant="ghost"
               size="sm"

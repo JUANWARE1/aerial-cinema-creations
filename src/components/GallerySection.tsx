@@ -48,12 +48,20 @@ const GallerySection: React.FC = () => {
     }
   ];
 
-  const categories = ['All', 'Equipment', 'City', 'Events', 'Nature', 'Technical'];
-  const [activeCategory, setActiveCategory] = useState('All');
+  const categories = [
+    { key: 'all', label: t.gallery.all },
+    { key: 'equipment', label: t.gallery.equipment },
+    { key: 'city', label: t.gallery.city },
+    { key: 'events', label: t.gallery.events },
+    { key: 'nature', label: t.gallery.nature },
+    { key: 'technical', label: t.gallery.technical }
+  ];
 
-  const filteredItems = activeCategory === 'All' 
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const filteredItems = activeCategory === 'all' 
     ? galleryItems 
-    : galleryItems.filter(item => item.category === activeCategory);
+    : galleryItems.filter(item => item.category.toLowerCase() === activeCategory);
 
   return (
     <section id="gallery" className="py-20 bg-gradient-to-br from-drone-gray/5 to-drone-dark/20">
@@ -71,18 +79,18 @@ const GallerySection: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
               <Button
-                key={category}
-                variant={activeCategory === category ? "default" : "outline"}
-                onClick={() => setActiveCategory(category)}
+                key={category.key}
+                variant={activeCategory === category.key ? "default" : "outline"}
+                onClick={() => setActiveCategory(category.key)}
                 className={`
                   px-6 py-2 rounded-full transition-all duration-300
-                  ${activeCategory === category 
+                  ${activeCategory === category.key 
                     ? 'bg-drone-light text-drone-dark' 
                     : 'border-drone-light/30 text-drone-light hover:bg-drone-light/10'
                   }
                 `}
               >
-                {category}
+                {category.label}
               </Button>
             ))}
           </div>
@@ -155,7 +163,7 @@ const GallerySection: React.FC = () => {
             size="lg"
             className="bg-drone-light text-drone-dark hover:bg-white transition-all duration-300 text-lg px-8 py-4"
           >
-            Ver Portafolio Completo
+            {t.gallery.viewPortfolio}
           </Button>
         </div>
       </div>

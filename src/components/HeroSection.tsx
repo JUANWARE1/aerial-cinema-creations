@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { Play, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from '@/utils/translations';
 
@@ -46,43 +44,23 @@ const HeroSection: React.FC = () => {
             {t.hero.description}
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in">
-            <Button 
-              size="lg" 
-              className="bg-drone-light text-drone-dark hover:bg-white transition-all duration-300 text-lg px-8 py-4 group"
-            >
-              {t.hero.cta}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-drone-light text-drone-light hover:bg-drone-light hover:text-drone-dark transition-all duration-300 text-lg px-8 py-4 group"
-            >
-              <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Ver Demo Reel
-            </Button>
-          </div>
-
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-in">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">200+</div>
-              <div className="text-drone-light text-sm md:text-base">Proyectos Completados</div>
+              <div className="text-drone-light text-sm md:text-base">{t.stats.projects}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">4K</div>
-              <div className="text-drone-light text-sm md:text-base">Calidad Ultra HD</div>
+              <div className="text-drone-light text-sm md:text-base">{t.stats.quality}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">24h</div>
-              <div className="text-drone-light text-sm md:text-base">Entrega Rápida</div>
+              <div className="text-drone-light text-sm md:text-base">{t.stats.delivery}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
-              <div className="text-drone-light text-sm md:text-base">Satisfacción</div>
+              <div className="text-drone-light text-sm md:text-base">{t.stats.satisfaction}</div>
             </div>
           </div>
         </div>
