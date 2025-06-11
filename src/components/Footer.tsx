@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-6">
               <Camera className="h-8 w-8 text-drone-light mr-3" />
               <h3 className="text-2xl font-cinematic font-bold text-white">
-                SkyVision<span className="text-drone-light">Pro</span>
+                ZEPHYR<span className="text-drone-light">DronMX</span>
               </h3>
             </div>
             <p className="text-drone-light mb-6 max-w-md leading-relaxed">
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center text-drone-light">
                 <Mail className="h-5 w-5 mr-3" />
-                <span>info@skyvisionpro.com</span>
+                <span>info@zephyrdronmx.com</span>
               </div>
               <div className="flex items-center text-drone-light">
                 <Phone className="h-5 w-5 mr-3" />
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-drone-gray/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-drone-gray text-sm mb-4 md:mb-0">
-              © 2024 SkyVision Pro. {t.footer.rights}
+              © 2024 ZEPHYR DronMX. {t.footer.rights}
             </p>
             <div className="flex items-center space-x-6 text-sm text-drone-gray">
               <a href="#" className="hover:text-drone-light transition-colors">Política de Privacidad</a>
