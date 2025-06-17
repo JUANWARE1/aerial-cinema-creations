@@ -110,9 +110,7 @@ const FormSummary: React.FC<FormSummaryProps> = ({ formData, onBack }) => {
                 <div className="space-y-1 text-drone-light">
                   {formData.verticalVideo && <p>• Video vertical para redes sociales</p>}
                   {formData.logo && <p>• Agregado de logotipo</p>}
-                  {form
-
-ata.expressDelivery && <p>• Entrega express (48h)</p>}
+                  {formData.expressDelivery && <p>• Entrega express (48h)</p>}
                   {formData.otherExtras && <p>• {formData.otherExtras}</p>}
                   {!formData.verticalVideo && !formData.logo && !formData.expressDelivery && !formData.otherExtras && (
                     <p className="text-drone-gray">Sin extras seleccionados</p>
