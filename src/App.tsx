@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Videos from "./pages/Videos";
 import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import PackageCreator from "./pages/PackageCreator";
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/videos" element={<Videos />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/creador-de-paquetes" element={<PackageCreator />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

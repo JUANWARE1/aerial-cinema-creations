@@ -7,6 +7,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FloatingContact from '@/components/FloatingContact';
+import { Link } from 'react-router-dom';
 
 const Blog: React.FC = () => {
   const { language } = useTheme();
@@ -169,20 +170,19 @@ const Blog: React.FC = () => {
                   </div>
 
                   {/* Read More Button */}
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-between text-drone-light hover:text-white hover:bg-drone-light/10 p-0"
-                  >
-                    Leer más
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
+                  <Link to={`/blog/${post.id}`}>
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-between text-drone-light hover:text-white hover:bg-drone-light/10 p-0"
+                    >
+                      Leer más
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </article>
             ))}
           </div>
-
-          {/* Newsletter Section */}
-         
         </div>
       </section>
 
