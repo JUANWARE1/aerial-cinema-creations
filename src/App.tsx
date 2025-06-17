@@ -8,9 +8,9 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import Videos from "./pages/Videos";
 import Gallery from "./pages/Gallery";
-// import Quote from "./pages/Quote"; // Comentado según solicitud
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import PackageCreator from "./pages/PackageCreator";
 
 const queryClient = new QueryClient();
 
@@ -25,8 +25,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/gallery" element={<Gallery />} />
-            {/* <Route path="/quote" element={<Quote />} /> */}
             <Route path="/blog" element={<Blog />} />
+            <Route path="/creador-de-paquetes" element={<PackageCreator />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
