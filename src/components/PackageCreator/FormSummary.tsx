@@ -65,9 +65,9 @@ const FormSummary: React.FC<FormSummaryProps> = ({ formData, onBack }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-drone-dark via-drone-dark/95 to-drone-gray/20 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 py-8 px-4">
       <div className="max-w-2xl mx-auto">
-        <Card className="bg-white/10 backdrop-blur-md border-white/20">
+        <Card className="bg-white/10 backdrop-blur-md border-white/20 shadow-2xl">
           <CardHeader className="text-center">
             <div className="flex justify-center mb-4">
               <CheckCircle className="w-16 h-16 text-green-400" />
@@ -75,52 +75,52 @@ const FormSummary: React.FC<FormSummaryProps> = ({ formData, onBack }) => {
             <CardTitle className="text-2xl md:text-3xl font-bold text-white mb-2">
               ¡Paquete Creado!
             </CardTitle>
-            <p className="text-drone-light">
+            <p className="text-slate-300">
               Revisa los detalles de tu paquete personalizado
             </p>
           </CardHeader>
           
           <CardContent className="p-6 space-y-6">
             <div className="grid gap-4">
-              <div className="bg-white/5 p-4 rounded-lg">
+              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-2">Servicio</h3>
-                <p className="text-drone-light">{getServiceLabel()}</p>
+                <p className="text-slate-300">{getServiceLabel()}</p>
               </div>
               
-              <div className="bg-white/5 p-4 rounded-lg">
+              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-2">Detalles del Evento</h3>
-                <div className="space-y-1 text-drone-light">
+                <div className="space-y-1 text-slate-300">
                   <p><span className="font-medium">Fecha:</span> {formData.date}</p>
                   <p><span className="font-medium">Ubicación:</span> {formData.location}</p>
                   <p><span className="font-medium">Tipo:</span> {getEventTypeLabel()}</p>
                 </div>
               </div>
               
-              <div className="bg-white/5 p-4 rounded-lg">
+              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-2">Requerimientos Técnicos</h3>
-                <div className="space-y-1 text-drone-light">
+                <div className="space-y-1 text-slate-300">
                   <p><span className="font-medium">Duración:</span> {getDurationLabel()}</p>
                   <p><span className="font-medium">Video editado:</span> {formData.editedVideo === 'yes' ? 'Sí' : 'No'}</p>
                   <p><span className="font-medium">Música:</span> {formData.music === 'yes' ? 'Sí' : formData.music === 'provide' ? 'Cliente la proporciona' : 'No'}</p>
                 </div>
               </div>
               
-              <div className="bg-white/5 p-4 rounded-lg">
+              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-2">Extras</h3>
-                <div className="space-y-1 text-drone-light">
+                <div className="space-y-1 text-slate-300">
                   {formData.verticalVideo && <p>• Video vertical para redes sociales</p>}
                   {formData.logo && <p>• Agregado de logotipo</p>}
                   {formData.expressDelivery && <p>• Entrega express (48h)</p>}
                   {formData.otherExtras && <p>• {formData.otherExtras}</p>}
                   {!formData.verticalVideo && !formData.logo && !formData.expressDelivery && !formData.otherExtras && (
-                    <p className="text-drone-gray">Sin extras seleccionados</p>
+                    <p className="text-slate-500">Sin extras seleccionados</p>
                   )}
                 </div>
               </div>
               
-              <div className="bg-white/5 p-4 rounded-lg">
+              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                 <h3 className="text-lg font-semibold text-white mb-2">Datos de Contacto</h3>
-                <div className="space-y-1 text-drone-light">
+                <div className="space-y-1 text-slate-300">
                   <p><span className="font-medium">Nombre:</span> {formData.fullName}</p>
                   <p><span className="font-medium">Email:</span> {formData.email}</p>
                   <p><span className="font-medium">Teléfono:</span> {formData.phone}</p>

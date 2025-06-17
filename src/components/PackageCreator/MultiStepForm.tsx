@@ -116,16 +116,16 @@ const MultiStepForm: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-drone-dark via-drone-dark/95 to-drone-gray/20 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 py-8 px-4">
       <div className="max-w-2xl mx-auto">
-        <Card className="bg-white/10 backdrop-blur-md border-white/20">
+        <Card className="bg-white/10 backdrop-blur-md border-white/20 shadow-2xl">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl md:text-3xl font-bold text-white mb-4">
               Creador de Paquetes
             </CardTitle>
             <div className="space-y-2">
-              <Progress value={progress} className="w-full h-2" />
-              <p className="text-drone-light text-sm">
+              <Progress value={progress} className="w-full h-2 bg-slate-700" />
+              <p className="text-slate-300 text-sm">
                 Paso {currentStep} de {totalSteps}
               </p>
             </div>
@@ -153,7 +153,7 @@ const MultiStepForm: React.FC = () => {
                 onClick={prevStep}
                 disabled={currentStep === 1}
                 variant="outline"
-                className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
+                className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20 disabled:opacity-50"
               >
                 <ChevronLeft size={16} />
                 Anterior
@@ -161,7 +161,7 @@ const MultiStepForm: React.FC = () => {
               
               <Button
                 onClick={nextStep}
-                className="flex items-center gap-2 bg-drone-light hover:bg-drone-light/80 text-drone-dark"
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white"
               >
                 {currentStep === totalSteps ? 'Crear Paquete' : 'Siguiente'}
                 {currentStep !== totalSteps && <ChevronRight size={16} />}
