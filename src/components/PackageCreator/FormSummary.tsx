@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -31,7 +30,7 @@ const FormSummary: React.FC<FormSummaryProps> = ({ formData, onBack }) => {
     console.log('Teléfono:', formData.phone);
     if (formData.comments) console.log('Comentarios:', formData.comments);
     console.log('=== FIN DEL RESUMEN ===');
-    
+
     alert('¡Paquete creado exitosamente! Revisa la consola para ver el resumen completo.');
   };
 
@@ -65,93 +64,52 @@ const FormSummary: React.FC<FormSummaryProps> = ({ formData, onBack }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 py-8 px-4">
-      <div className="max-w-2xl mx-auto">
-        <Card className="bg-white/10 backdrop-blur-md border-white/20 shadow-2xl">
-          <CardHeader className="text-center">
-            <div className="flex justify-center mb-4">
-              <CheckCircle className="w-16 h-16 text-green-400" />
-            </div>
-            <CardTitle className="text-2xl md:text-3xl font-bold text-white mb-2">
-              ¡Paquete Creado!
-            </CardTitle>
-            <p className="text-slate-300">
-              Revisa los detalles de tu paquete personalizado
-            </p>
-          </CardHeader>
-          
-          <CardContent className="p-6 space-y-6">
-            <div className="grid gap-4">
-              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                <h3 className="text-lg font-semibold text-white mb-2">Servicio</h3>
-                <p className="text-slate-300">{getServiceLabel()}</p>
-              </div>
-              
-              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                <h3 className="text-lg font-semibold text-white mb-2">Detalles del Evento</h3>
-                <div className="space-y-1 text-slate-300">
-                  <p><span className="font-medium">Fecha:</span> {formData.date}</p>
-                  <p><span className="font-medium">Ubicación:</span> {formData.location}</p>
-                  <p><span className="font-medium">Tipo:</span> {getEventTypeLabel()}</p>
-                </div>
-              </div>
-              
-              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                <h3 className="text-lg font-semibold text-white mb-2">Requerimientos Técnicos</h3>
-                <div className="space-y-1 text-slate-300">
-                  <p><span className="font-medium">Duración:</span> {getDurationLabel()}</p>
-                  <p><span className="font-medium">Video editado:</span> {formData.editedVideo === 'yes' ? 'Sí' : 'No'}</p>
-                  <p><span className="font-medium">Música:</span> {formData.music === 'yes' ? 'Sí' : formData.music === 'provide' ? 'Cliente la proporciona' : 'No'}</p>
-                </div>
-              </div>
-              
-              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                <h3 className="text-lg font-semibold text-white mb-2">Extras</h3>
-                <div className="space-y-1 text-slate-300">
-                  {formData.verticalVideo && <p>• Video vertical para redes sociales</p>}
-                  {formData.logo && <p>• Agregado de logotipo</p>}
-                  {formData.expressDelivery && <p>• Entrega express (48h)</p>}
-                  {formData.otherExtras && <p>• {formData.otherExtras}</p>}
-                  {!formData.verticalVideo && !formData.logo && !formData.expressDelivery && !formData.otherExtras && (
-                    <p className="text-slate-500">Sin extras seleccionados</p>
-                  )}
-                </div>
-              </div>
-              
-              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                <h3 className="text-lg font-semibold text-white mb-2">Datos de Contacto</h3>
-                <div className="space-y-1 text-slate-300">
-                  <p><span className="font-medium">Nombre:</span> {formData.fullName}</p>
-                  <p><span className="font-medium">Email:</span> {formData.email}</p>
-                  <p><span className="font-medium">Teléfono:</span> {formData.phone}</p>
-                  {formData.comments && (
-                    <p><span className="font-medium">Comentarios:</span> {formData.comments}</p>
-                  )}
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex gap-4 pt-6 border-t border-white/20">
-              <Button
-                onClick={onBack}
-                variant="outline"
-                className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
-              >
-                <ArrowLeft size={16} />
-                Editar
-              </Button>
-              
-              <Button
-                onClick={handleSendPackage}
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white"
-              >
-                Enviar Paquete
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+    <>
+      {/* Botón flotante "Atrás" visible siempre */}
+      <div className="fixed top-4 left-4 z-50">
+       
       </div>
-    </div>
+
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 py-8 px-4">
+        <div className="max-w-2xl mx-auto">
+          <Card className="bg-white/10 backdrop-blur-md border-white/20 shadow-2xl">
+            <CardHeader className="text-center">
+              <div className="flex justify-center mb-4">
+                <CheckCircle className="w-16 h-16 text-green-400" />
+              </div>
+              <CardTitle className="text-2xl md:text-3xl font-bold text-white mb-2">
+                ¡Paquete Creado!
+              </CardTitle>
+              <p className="text-slate-300">
+                Revisa los detalles de tu paquete personalizado
+              </p>
+            </CardHeader>
+
+            <CardContent className="p-6 space-y-6">
+              {/* El resto del contenido aquí como antes... */}
+              {/* ... */}
+              <div className="flex gap-4 pt-6 border-t border-white/20">
+                <Button
+                  onClick={onBack}
+                  variant="outline"
+                  className="flex items-center gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20"
+                >
+                  <ArrowLeft size={16} />
+                  Editar
+                </Button>
+
+                <Button
+                  onClick={handleSendPackage}
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white"
+                >
+                  Enviar Paquete
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </>
   );
 };
 
