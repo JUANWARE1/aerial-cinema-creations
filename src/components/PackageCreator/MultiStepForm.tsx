@@ -1,16 +1,17 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, AlertCircle } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import Step1ServiceSelection from './Step1ServiceSelection';
 import Step2EventDetails from './Step2EventDetails';
 import Step3TechnicalRequirements from './Step3TechnicalRequirements';
 import Step4OptionalExtras from './Step4OptionalExtras';
 import Step5ClientData from './Step5ClientData';
 import FormSummary from './FormSummary';
+import { validateStep1, validateStep2, validateStep3, validateStep4, validateStep5 } from '@/utils/formValidation';
 
 export interface FormData {
   // Step 1
@@ -43,6 +44,8 @@ export interface FormData {
 const MultiStepForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [showSummary, setShowSummary] = useState(false);
+  const [validationError, setValidationError] = useState<string>('');
+  const [isStepValid, setIsStepValid] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     service: '',
     otherService: '',
@@ -69,7 +72,65 @@ const MultiStepForm: React.FC = () => {
     setFormData(prev => ({ ...prev, ...newData }));
   };
 
+  // Validate current step whenever form data changes
+  useEffect(() => {
+    const validateCurrentStep = () => {
+      let validation;
+      switch (currentStep) {
+        case 1:
+          validation = validateStep1(formData);
+          break;
+        case 2:
+          validation = validateStep2(formData);
+          break;
+        case 3:
+          validation = validateStep3(formData);
+          break;
+        case 4:
+          validation = validateStep4(formData);
+          break;
+        case 5:
+          validation = validateStep5(formData);
+          break;
+        default:
+          validation = { isValid: true };
+      }
+      
+      setIsStepValid(validation.isValid);
+      setValidationError(validation.message || '');
+    };
+
+    validateCurrentStep();
+  }, [formData, currentStep]);
+
   const nextStep = () => {
+    let validation;
+    switch (currentStep) {
+      case 1:
+        validation = validateStep1(formData);
+        break;
+      case 2:
+        validation = validateStep2(formData);
+        break;
+      case 3:
+        validation = validateStep3(formData);
+        break;
+      case 4:
+        validation = validateStep4(formData);
+        break;
+      case 5:
+        validation = validateStep5(formData);
+        break;
+      default:
+        validation = { isValid: true };
+    }
+
+    if (!validation.isValid) {
+      setValidationError(validation.message || '');
+      return;
+    }
+
+    setValidationError('');
     if (currentStep < totalSteps) {
       setCurrentStep(prev => prev + 1);
     } else {
@@ -80,6 +141,7 @@ const MultiStepForm: React.FC = () => {
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(prev => prev - 1);
+      setValidationError('');
     }
   };
 
@@ -143,6 +205,15 @@ const MultiStepForm: React.FC = () => {
                 {getStepTitle()}
               </h3>
               
+              {validationError && (
+                <Alert className="mb-6 bg-red-500/20 border-red-500/50">
+                  <AlertCircle className="h-4 w-4 text-red-400" />
+                  <AlertDescription className="text-red-100">
+                    {validationError}
+                  </AlertDescription>
+                </Alert>
+              )}
+              
               <AnimatePresence mode="wait">
                 {renderStep()}
               </AnimatePresence>
@@ -161,7 +232,8 @@ const MultiStepForm: React.FC = () => {
               
               <Button
                 onClick={nextStep}
-                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white"
+                disabled={!isStepValid}
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {currentStep === totalSteps ? 'Crear Paquete' : 'Siguiente'}
                 {currentStep !== totalSteps && <ChevronRight size={16} />}
