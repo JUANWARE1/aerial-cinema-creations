@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Camera, Mail, Phone, MapPin } from 'lucide-react';
+import { Camera, Mail, Phone, MapPin, Instagram, Youtube, Facebook } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from '@/utils/translations';
 
@@ -9,10 +9,27 @@ const Footer: React.FC = () => {
   const t = useTranslation(language);
 
   const socialLinks = [
-    { name: 'Instagram', url: 'https://www.instagram.com/zephyr.dronmx/',  target: '_blank', icon: '📷' },
-    { name: 'YouTube', url: 'https://www.youtube.com/@ZephirDronMX',  target: '_blank', icon: '📹' },
-    { name: 'Facebook', url: '#',  target: '_blank', icon: '📘' },
-    { name: 'TikTok', url: '#',  target: '_blank', icon: '🎵' }
+    { 
+      name: 'Instagram', 
+      url: 'https://www.instagram.com/zephyr.dronmx/', 
+      target: '_blank', 
+      icon: Instagram,
+      color: 'hover:text-pink-400'
+    },
+    { 
+      name: 'YouTube', 
+      url: 'https://www.youtube.com/@ZephirDronMX', 
+      target: '_blank', 
+      icon: Youtube,
+      color: 'hover:text-red-400'
+    },
+    { 
+      name: 'Facebook', 
+      url: '#', 
+      target: '_blank', 
+      icon: Facebook,
+      color: 'hover:text-blue-400'
+    }
   ];
 
   const quickLinks = [
@@ -24,47 +41,55 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-drone-dark border-t border-drone-gray/20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-br from-drone-dark via-drone-dark/95 to-drone-gray/30 border-t border-drone-light/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
-              <Camera className="h-8 w-8 text-drone-light mr-3" />
-              <h3 className="text-2xl font-cinematic font-bold text-white">
+            <div className="flex items-center mb-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-drone-light to-white rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                <Camera className="h-6 w-6 text-drone-dark" />
+              </div>
+              <h3 className="text-3xl font-cinematic font-bold text-white tracking-wide">
                 ZEPHYR<span className="text-drone-light">DronMX</span>
               </h3>
             </div>
-            <p className="text-drone-light mb-6 max-w-md leading-relaxed">
+            <p className="text-drone-light/90 mb-8 max-w-md leading-relaxed text-lg font-light">
               {t.footer.description}
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center text-drone-light">
-                <Mail className="h-5 w-5 mr-3" />
-                <span>udigitalb.contacto@gmail.com</span>
+            <div className="space-y-4">
+              <div className="flex items-center text-drone-light/90 group hover:text-white transition-colors duration-300">
+                <div className="w-10 h-10 bg-drone-light/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-drone-light/20 transition-colors duration-300">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <span className="font-medium">udigitalb.contacto@gmail.com</span>
               </div>
-              <div className="flex items-center text-drone-light">
-                <Phone className="h-5 w-5 mr-3" />
-                <span>(+52) 33-21-99-84-03</span>
+              <div className="flex items-center text-drone-light/90 group hover:text-white transition-colors duration-300">
+                <div className="w-10 h-10 bg-drone-light/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-drone-light/20 transition-colors duration-300">
+                  <Phone className="h-5 w-5" />
+                </div>
+                <span className="font-medium">(+52) 33-21-99-84-03</span>
               </div>
-              <div className="flex items-center text-drone-light">
-                <MapPin className="h-5 w-5 mr-3" />
-                <span>Guadalajara Jal, México</span>
+              <div className="flex items-center text-drone-light/90 group hover:text-white transition-colors duration-300">
+                <div className="w-10 h-10 bg-drone-light/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-drone-light/20 transition-colors duration-300">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <span className="font-medium">Guadalajara Jal, México</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold text-lg mb-6">Enlaces Rápidos</h4>
-            <ul className="space-y-3">
+            <h4 className="text-white font-cinematic font-semibold text-xl mb-8 tracking-wide">Enlaces Rápidos</h4>
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-drone-light hover:text-white transition-colors duration-200"
+                    className="text-drone-light/80 hover:text-white transition-all duration-300 font-medium text-lg hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -75,52 +100,40 @@ const Footer: React.FC = () => {
 
           {/* Social Media */}
           <div>
-            <h4 className="text-white font-semibold text-lg mb-6">Síguenos</h4>
-            <div className="grid grid-cols-2 gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  className="flex items-center p-3 bg-drone-gray/10 rounded-xl hover:bg-drone-light/10 transition-colors duration-300 group"
-                >
-                  <span className="text-xl mr-2">{social.icon}</span>
-                  <span className="text-drone-light group-hover:text-white text-sm">
-                    {social.name}
-                  </span>
-                </a>
-              ))}
+            <h4 className="text-white font-cinematic font-semibold text-xl mb-8 tracking-wide">Síguenos</h4>
+            <div className="space-y-4">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target={social.target}
+                    className={`flex items-center p-4 bg-gradient-to-r from-drone-gray/10 to-transparent backdrop-blur-sm border border-drone-light/10 rounded-2xl hover:border-drone-light/30 transition-all duration-300 group hover:shadow-lg hover:shadow-drone-light/5 ${social.color}`}
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-drone-light/10 to-transparent rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <span className="font-semibold text-lg group-hover:translate-x-1 transition-transform duration-300">
+                      {social.name}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
-
-            {/* Newsletter */}
-            {/* <div className="mt-8">
-              <h5 className="text-white font-medium mb-3">Newsletter</h5>
-              <p className="text-drone-light text-sm mb-4">
-                Recibe tips y novedades sobre drones
-              </p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Tu email"
-                  className="flex-1 px-4 py-2 bg-drone-gray/20 border border-drone-gray/30 rounded-l-lg text-white placeholder-drone-gray focus:outline-none focus:border-drone-light"
-                />
-                <button className="px-4 py-2 bg-drone-light text-drone-dark rounded-r-lg hover:bg-white transition-colors duration-300">
-                  ✓
-                </button>
-              </div>
-            </div> */}
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-drone-gray/20 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-drone-gray text-sm mb-4 md:mb-0">
+        <div className="border-t border-drone-light/10 mt-16 pt-10">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <p className="text-drone-gray/80 text-base font-medium">
               © 2024 ZEPHYR DronMX. {t.footer.rights}
             </p>
-            <div className="flex items-center space-x-6 text-sm text-drone-gray">
-              <a href="#" className="hover:text-drone-light transition-colors">Política de Privacidad</a>
-              <a href="#" className="hover:text-drone-light transition-colors">Términos de Servicio</a>
-              <a href="#" className="hover:text-drone-light transition-colors">Cookies</a>
+            <div className="flex items-center space-x-8 text-base text-drone-gray/80">
+              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">Política de Privacidad</a>
+              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">Términos de Servicio</a>
+              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">Cookies</a>
             </div>
           </div>
         </div>
