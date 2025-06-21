@@ -1,23 +1,29 @@
+
 import React from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
+import { useTranslation } from '@/utils/translations';
 import MultiStepForm from '@/components/PackageCreator/MultiStepForm';
 
 const PackageCreator: React.FC = () => {
+  const { language } = useTheme();
+  const t = useTranslation(language);
+
   console.log('PackageCreator component loaded');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative">
       
-      {/* Botón "Atrás" en la esquina superior izquierda */}
+      {/* Back button in top left corner */}
       <div className="fixed top-4 left-4 z-50">
         <button
           onClick={() => (window.location.href = '/')}
           className="flex items-center px-4 py-2 bg-white/20 text-white border border-white/30 rounded hover:bg-white/30 transition"
         >
-          ← Atrás
+          ← {language === 'es' ? 'Atrás' : 'Back'}
         </button>
       </div>
 
-      {/* Formulario multistep */}
+      {/* Multi-step form */}
       <MultiStepForm />
     </div>
   );

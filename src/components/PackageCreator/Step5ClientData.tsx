@@ -3,6 +3,8 @@ import React from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useTheme } from '@/contexts/ThemeContext';
+import { useTranslation } from '@/utils/translations';
 import { FormData } from './MultiStepForm';
 
 interface Step5Props {
@@ -11,16 +13,19 @@ interface Step5Props {
 }
 
 const Step5ClientData: React.FC<Step5Props> = ({ formData, updateFormData }) => {
+  const { language } = useTheme();
+  const t = useTranslation(language);
+
   return (
     <div className="space-y-6">
       <div>
         <Label htmlFor="full-name" className="text-white mb-2 block">
-          Nombre completo
+          {t.packageCreator.step5.fullName}
         </Label>
         <Input
           id="full-name"
           type="text"
-          placeholder="Su nombre completo"
+          placeholder={t.packageCreator.step5.fullNamePlaceholder}
           value={formData.fullName}
           onChange={(e) => updateFormData({ fullName: e.target.value })}
           className="bg-white/10 border-white/20 text-white placeholder:text-drone-light"
@@ -29,12 +34,12 @@ const Step5ClientData: React.FC<Step5Props> = ({ formData, updateFormData }) => 
       
       <div>
         <Label htmlFor="email" className="text-white mb-2 block">
-          Correo electrónico
+          {t.packageCreator.step5.email}
         </Label>
         <Input
           id="email"
           type="email"
-          placeholder="su.email@ejemplo.com"
+          placeholder={t.packageCreator.step5.emailPlaceholder}
           value={formData.email}
           onChange={(e) => updateFormData({ email: e.target.value })}
           className="bg-white/10 border-white/20 text-white placeholder:text-drone-light"
@@ -43,12 +48,12 @@ const Step5ClientData: React.FC<Step5Props> = ({ formData, updateFormData }) => 
       
       <div>
         <Label htmlFor="phone" className="text-white mb-2 block">
-          Teléfono o WhatsApp
+          {t.packageCreator.step5.phone}
         </Label>
         <Input
           id="phone"
           type="tel"
-          placeholder="+1 234 567 8900"
+          placeholder={t.packageCreator.step5.phonePlaceholder}
           value={formData.phone}
           onChange={(e) => updateFormData({ phone: e.target.value })}
           className="bg-white/10 border-white/20 text-white placeholder:text-drone-light"
@@ -57,11 +62,11 @@ const Step5ClientData: React.FC<Step5Props> = ({ formData, updateFormData }) => 
       
       <div>
         <Label htmlFor="comments" className="text-white mb-2 block">
-          Comentarios adicionales
+          {t.packageCreator.step5.comments}
         </Label>
         <Textarea
           id="comments"
-          placeholder="Cualquier información adicional que considere importante..."
+          placeholder={t.packageCreator.step5.commentsPlaceholder}
           value={formData.comments}
           onChange={(e) => updateFormData({ comments: e.target.value })}
           className="bg-white/10 border-white/20 text-white placeholder:text-drone-light min-h-[100px]"

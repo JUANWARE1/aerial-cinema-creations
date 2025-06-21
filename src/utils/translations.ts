@@ -100,20 +100,109 @@ export const translations = {
         name: 'Nombre',
         email: 'Correo Electrónico',
         phone: 'Teléfono',
-        service: 'Tipo de Servicio',
         message: 'Mensaje',
         send: 'Enviar Mensaje'
       }
     },
     footer: {
       rights: 'Todos los derechos reservados.',
-      description: 'Servicios profesionales de dron con tecnología DJI Mini 4 Pro'
+      description: 'Servicios profesionales de dron con tecnología DJI Mini 4 Pro',
+      quickLinks: 'Enlaces Rápidos',
+      followUs: 'Síguenos',
+      privacyPolicy: 'Política de Privacidad',
+      termsOfService: 'Términos de Servicio',
+      cookies: 'Cookies'
     },
     stats: {
       projects: 'Eventos Cubiertos',
       quality: 'Calidad Ultra HD',
       delivery: 'Horas de video grabadas',
       satisfaction: 'Satisfacción'
+    },
+    blog: {
+      title: 'Blog',
+      subtitle: 'Consejos, noticias y actualizaciones sobre fotografía aérea',
+      readMore: 'Leer más',
+      backToBlog: 'Volver al Blog',
+      relatedPosts: 'Artículos Relacionados'
+    },
+    packageCreator: {
+      title: 'Creador de Paquetes',
+      step: 'Paso',
+      of: 'de',
+      completed: 'completado',
+      previous: 'Anterior',
+      next: 'Siguiente',
+      createPackage: 'Crear Paquete',
+      steps: {
+        serviceSelection: 'Selección de Servicio',
+        eventDetails: 'Detalles del Evento',
+        technicalRequirements: 'Requerimientos Técnicos',
+        optionalExtras: 'Extras Opcionales',
+        clientData: 'Datos del Cliente'
+      },
+      step1: {
+        title: 'Selección de Servicio',
+        videoOnly: 'Grabación con drones (solo video)',
+        videoEditing: 'Grabación + edición profesional',
+        photography: 'Fotografías aéreas únicamente',
+        other: 'Otro',
+        specifyService: 'Especifique el servicio',
+        customServicePlaceholder: 'Describa su servicio personalizado'
+      },
+      step2: {
+        title: 'Detalles del Evento',
+        eventDate: 'Fecha del evento',
+        location: 'Ubicación',
+        locationPlaceholder: 'Ciudad, dirección o lugar específico',
+        eventType: 'Tipo de evento',
+        selectEventType: 'Seleccione el tipo de evento',
+        wedding: 'Boda',
+        corporate: 'Empresarial',
+        sports: 'Deportivo',
+        other: 'Otro'
+      },
+      step3: {
+        title: 'Requerimientos Técnicos',
+        duration: 'Duración del servicio',
+        selectDuration: 'Seleccione la duración',
+        thirtyMin: '30 minutos',
+        oneHour: '1 hora',
+        moreThanOneHour: 'Más de 1 hora',
+        editedVideo: '¿Desea video final editado?',
+        music: '¿Desea música incluida?',
+        yes: 'Sí',
+        no: 'No',
+        provide: 'Yo la proporciono'
+      },
+      step4: {
+        title: 'Extras Opcionales',
+        verticalVideo: 'Video vertical para redes sociales',
+        logo: 'Agregado de logotipo',
+        expressDelivery: 'Entrega express (48h)',
+        otherRequirements: 'Otros requerimientos especiales',
+        requirementsPlaceholder: 'Describa cualquier requerimiento adicional...'
+      },
+      step5: {
+        title: 'Datos del Cliente',
+        fullName: 'Nombre completo',
+        fullNamePlaceholder: 'Su nombre completo',
+        email: 'Correo electrónico',
+        emailPlaceholder: 'su.email@ejemplo.com',
+        phone: 'Teléfono o WhatsApp',
+        phonePlaceholder: '+1 234 567 8900',
+        comments: 'Comentarios adicionales',
+        commentsPlaceholder: 'Cualquier información adicional que considere importante...'
+      },
+      summary: {
+        title: '¡Paquete Creado!',
+        subtitle: 'Revisa los detalles de tu paquete personalizado',
+        edit: 'Editar',
+        sendPackage: 'Enviar Paquete',
+        packageCreated: '¡Paquete creado exitosamente!',
+        emailSent: 'La información ha sido enviada por correo electrónico.',
+        emailError: 'Error al enviar el correo electrónico. Por favor intente nuevamente.'
+      }
     }
   },
   en: {
@@ -216,20 +305,109 @@ export const translations = {
         name: 'Name',
         email: 'Email',
         phone: 'Phone',
-        service: 'Service Type',
         message: 'Message',
         send: 'Send Message'
       }
     },
     footer: {
       rights: 'All rights reserved.',
-      description: 'Professional drone services with DJI Mini 4 Pro technology'
+      description: 'Professional drone services with DJI Mini 4 Pro technology',
+      quickLinks: 'Quick Links',
+      followUs: 'Follow Us',
+      privacyPolicy: 'Privacy Policy',
+      termsOfService: 'Terms of Service',
+      cookies: 'Cookies'
     },
     stats: {
       projects: 'Events covered',
       quality: 'Ultra HD Quality',
       delivery: 'Hours of video recorded',
       satisfaction: 'Satisfaction'
+    },
+    blog: {
+      title: 'Blog',
+      subtitle: 'Tips, news and updates about aerial photography',
+      readMore: 'Read more',
+      backToBlog: 'Back to Blog',
+      relatedPosts: 'Related Posts'
+    },
+    packageCreator: {
+      title: 'Package Creator',
+      step: 'Step',
+      of: 'of',
+      completed: 'completed',
+      previous: 'Previous',
+      next: 'Next',
+      createPackage: 'Create Package',
+      steps: {
+        serviceSelection: 'Service Selection',
+        eventDetails: 'Event Details',
+        technicalRequirements: 'Technical Requirements',
+        optionalExtras: 'Optional Extras',
+        clientData: 'Client Data'
+      },
+      step1: {
+        title: 'Service Selection',
+        videoOnly: 'Drone recording (video only)',
+        videoEditing: 'Recording + professional editing',
+        photography: 'Aerial photography only',
+        other: 'Other',
+        specifyService: 'Specify the service',
+        customServicePlaceholder: 'Describe your custom service'
+      },
+      step2: {
+        title: 'Event Details',
+        eventDate: 'Event date',
+        location: 'Location',
+        locationPlaceholder: 'City, address or specific place',
+        eventType: 'Event type',
+        selectEventType: 'Select event type',
+        wedding: 'Wedding',
+        corporate: 'Corporate',
+        sports: 'Sports',
+        other: 'Other'
+      },
+      step3: {
+        title: 'Technical Requirements',
+        duration: 'Service duration',
+        selectDuration: 'Select duration',
+        thirtyMin: '30 minutes',
+        oneHour: '1 hour',
+        moreThanOneHour: 'More than 1 hour',
+        editedVideo: 'Do you want final edited video?',
+        music: 'Do you want music included?',
+        yes: 'Yes',
+        no: 'No',
+        provide: 'I will provide it'
+      },
+      step4: {
+        title: 'Optional Extras',
+        verticalVideo: 'Vertical video for social media',
+        logo: 'Logo addition',
+        expressDelivery: 'Express delivery (48h)',
+        otherRequirements: 'Other special requirements',
+        requirementsPlaceholder: 'Describe any additional requirements...'
+      },
+      step5: {
+        title: 'Client Data',
+        fullName: 'Full name',
+        fullNamePlaceholder: 'Your full name',
+        email: 'Email',
+        emailPlaceholder: 'your.email@example.com',
+        phone: 'Phone or WhatsApp',
+        phonePlaceholder: '+1 234 567 8900',
+        comments: 'Additional comments',
+        commentsPlaceholder: 'Any additional information you consider important...'
+      },
+      summary: {
+        title: 'Package Created!',
+        subtitle: 'Review the details of your custom package',
+        edit: 'Edit',
+        sendPackage: 'Send Package',
+        packageCreated: 'Package created successfully!',
+        emailSent: 'The information has been sent by email.',
+        emailError: 'Error sending email. Please try again.'
+      }
     }
   }
 };

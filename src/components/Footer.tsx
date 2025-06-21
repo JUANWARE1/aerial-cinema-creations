@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-cinematic font-semibold text-xl mb-8 tracking-wide">Enlaces Rápidos</h4>
+            <h4 className="text-white font-cinematic font-semibold text-xl mb-8 tracking-wide">{t.footer.quickLinks}</h4>
             <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
 
           {/* Social Media */}
           <div>
-            <h4 className="text-white font-cinematic font-semibold text-xl mb-8 tracking-wide">Síguenos</h4>
+            <h4 className="text-white font-cinematic font-semibold text-xl mb-8 tracking-wide">{t.footer.followUs}</h4>
             <div className="space-y-4">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
@@ -131,9 +131,9 @@ const Footer: React.FC = () => {
               © 2024 ZEPHYR DronMX. {t.footer.rights}
             </p>
             <div className="flex items-center space-x-8 text-base text-drone-gray/80">
-              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">Política de Privacidad</a>
-              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">Términos de Servicio</a>
-              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">Cookies</a>
+              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">{t.footer.privacyPolicy}</a>
+              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">{t.footer.termsOfService}</a>
+              <a href="#" className="hover:text-drone-light transition-colors duration-300 font-medium">{t.footer.cookies}</a>
             </div>
           </div>
         </div>

@@ -3,6 +3,8 @@ import React from 'react';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Textarea } from '@/components/ui/textarea';
+import { useTheme } from '@/contexts/ThemeContext';
+import { useTranslation } from '@/utils/translations';
 import { FormData } from './MultiStepForm';
 
 interface Step4Props {
@@ -11,6 +13,9 @@ interface Step4Props {
 }
 
 const Step4OptionalExtras: React.FC<Step4Props> = ({ formData, updateFormData }) => {
+  const { language } = useTheme();
+  const t = useTranslation(language);
+
   return (
     <div className="space-y-6">
       <div className="space-y-4">
@@ -21,7 +26,7 @@ const Step4OptionalExtras: React.FC<Step4Props> = ({ formData, updateFormData })
             onCheckedChange={(checked) => updateFormData({ verticalVideo: checked as boolean })}
           />
           <Label htmlFor="vertical-video" className="text-white cursor-pointer flex-1">
-            Video vertical para redes sociales
+            {t.packageCreator.step4.verticalVideo}
           </Label>
         </div>
         
@@ -32,7 +37,7 @@ const Step4OptionalExtras: React.FC<Step4Props> = ({ formData, updateFormData })
             onCheckedChange={(checked) => updateFormData({ logo: checked as boolean })}
           />
           <Label htmlFor="logo" className="text-white cursor-pointer flex-1">
-            Agregado de logotipo
+            {t.packageCreator.step4.logo}
           </Label>
         </div>
         
@@ -43,18 +48,18 @@ const Step4OptionalExtras: React.FC<Step4Props> = ({ formData, updateFormData })
             onCheckedChange={(checked) => updateFormData({ expressDelivery: checked as boolean })}
           />
           <Label htmlFor="express-delivery" className="text-white cursor-pointer flex-1">
-            Entrega express (48h)
+            {t.packageCreator.step4.expressDelivery}
           </Label>
         </div>
       </div>
       
       <div>
         <Label htmlFor="other-extras" className="text-white mb-2 block">
-          Otros requerimientos especiales
+          {t.packageCreator.step4.otherRequirements}
         </Label>
         <Textarea
           id="other-extras"
-          placeholder="Describa cualquier requerimiento adicional..."
+          placeholder={t.packageCreator.step4.requirementsPlaceholder}
           value={formData.otherExtras}
           onChange={(e) => updateFormData({ otherExtras: e.target.value })}
           className="bg-white/10 border-white/20 text-white placeholder:text-drone-light min-h-[100px]"
