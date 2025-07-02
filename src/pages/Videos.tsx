@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Play, ZoomIn, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -19,56 +18,21 @@ const Videos: React.FC = () => {
       id: 1,
       title: 'DJI Mini 4 Pro - Demo Reel Profesional',
       thumbnail: '/lovable-uploads/501c3f4f-5927-4335-b524-f1113c74777c.png',
-      videoId: 'b0FB2OWPN08',
+      videoUrl: '/path/to/your/video1.mp4', // Replace with actual .mp4 path
       category: 'Demo',
       duration: '0:12',
       description: 'Showcase completo de las capacidades del DJI Mini 4 Pro en diferentes escenarios'
     },
+    // Uncomment and add more videos as needed
     // {
     //   id: 2,
     //   title: 'Cobertura Aérea de Bodas - Portfolio',
     //   thumbnail: '/lovable-uploads/bb05e63d-b8f3-4280-b786-aff9e95a7740.png',
-    //   videoId: 'dQw4w9WgXcQ',
+    //   videoUrl: '/path/to/your/video2.mp4',
     //   category: 'Bodas',
     //   duration: '4:15',
     //   description: 'Los momentos más emotivos capturados desde las alturas'
     // },
-    // {
-    //   id: 3,
-    //   title: 'Videos Inmobiliarios de Lujo',
-    //   thumbnail: '/lovable-uploads/c0d7f20b-adc1-486e-b72b-6d86e34952fe.png',
-    //   videoId: 'dQw4w9WgXcQ',
-    //   category: 'Inmobiliario',
-    //   duration: '3:45',
-    //   description: 'Presentación cinematográfica de propiedades exclusivas'
-    // },
-    // {
-    //   id: 4,
-    //   title: 'Video Corporativo Empresarial',
-    //   thumbnail: '/lovable-uploads/cee53865-9bbb-4cd9-b90b-4726b8bab2f7.png',
-    //   videoId: 'dQw4w9WgXcQ',
-    //   category: 'Corporativo',
-    //   duration: '5:20',
-    //   description: 'Promocionales corporativos con tomas aéreas impactantes'
-    // },
-    // {
-    //   id: 5,
-    //   title: 'Documentales de Naturaleza',
-    //   thumbnail: '/lovable-uploads/fe6b0dae-fc37-4ccd-b965-00f601f11e2d.png',
-    //   videoId: 'dQw4w9WgXcQ',
-    //   category: 'Naturaleza',
-    //   duration: '6:10',
-    //   description: 'Captura la belleza natural desde perspectivas únicas'
-    // },
-    // {
-    //   id: 6,
-    //   title: 'Eventos Deportivos Extremos',
-    //   thumbnail: '/lovable-uploads/501c3f4f-5927-4335-b524-f1113c74777c.png',
-    //   videoId: 'dQw4w9WgXcQ',
-    //   category: 'Deportes',
-    //   duration: '3:30',
-    //   description: 'Adrenalina pura capturada en 4K'
-    // }
   ];
 
   const categories = [
@@ -87,7 +51,7 @@ const Videos: React.FC = () => {
     ? videoItems 
     : videoItems.filter(video => video.category.toLowerCase() === activeCategory);
 
-  const handleVideoClick = (videoId: string, cardId: number) => {
+  const handleVideoClick = (cardId: number) => {
     if (playingVideo === `${cardId}`) {
       setPlayingVideo(null);
     } else {
@@ -142,13 +106,15 @@ const Videos: React.FC = () => {
                 {/* Video Container */}
                 <div className="relative aspect-video overflow-hidden">
                   {playingVideo === `${video.id}` ? (
-                    <iframe
-                      src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0`}
-                      title={video.title}
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                    <video
+                      src={video.videoUrl}
+                      controls
+                      autoPlay
+                      className="w-full h-full object-cover"
+                      onEnded={() => setPlayingVideo(null)}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
                   ) : (
                     <>
                       <img
@@ -163,7 +129,7 @@ const Videos: React.FC = () => {
                       {/* Play Button */}
                       <div 
                         className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                        onClick={() => handleVideoClick(video.videoId, video.id)}
+                        onClick={() => handleVideoClick(video.id)}
                       >
                         <div className="w-16 md:w-20 h-16 md:h-20 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl transform scale-90 group-hover:scale-100 transition-transform duration-300">
                           <Play className="h-8 md:h-10 w-8 md:w-10 text-drone-dark ml-1" />
@@ -199,7 +165,7 @@ const Videos: React.FC = () => {
                       size="sm" 
                       variant="ghost" 
                       className="text-drone-light hover:text-white hover:bg-drone-light/10 p-0"
-                      onClick={() => setSelectedVideo(`https://www.youtube.com/embed/${video.videoId}`)}
+                      onClick={() => setSelectedVideo(video.videoUrl)}
                     >
                       {t.videos.watchVideo}
                     </Button>
@@ -210,7 +176,7 @@ const Videos: React.FC = () => {
             ))}
           </div>
 
-          {/* Featured Video Section */}
+          {/* Featured Video Section - MANTIENE FORMATO YOUTUBE */}
           <div className="mt-20">
             <h2 className="text-3xl md:text-4xl font-cinematic font-bold text-center text-white mb-12">
               {t.videos.featuredTitle}
@@ -252,13 +218,14 @@ const Videos: React.FC = () => {
               <span className="ml-2">{t.videos.close}</span>
             </Button>
             <div className="aspect-video">
-              <iframe
+              <video
                 src={selectedVideo}
-                title="Video Player"
+                controls
+                autoPlay
                 className="w-full h-full rounded-xl shadow-2xl"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
