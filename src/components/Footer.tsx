@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   const socialLinks = [
     { 
       name: 'Instagram', 
-      url: 'https://www.instagram.com/zephyr.dronmx/', 
+      url: 'https://www.instagram.com/skyrion.dronmx/', 
       target: '_blank', 
       icon: Instagram,
       color: 'hover:text-pink-400'
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
     },
     { 
       name: 'Facebook', 
-      url: '#', 
+      url: 'https://www.facebook.com/profile.php?id=61576687060723', 
       target: '_blank', 
       icon: Facebook,
       color: 'hover:text-blue-400'
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
     { name: t.nav.home, href: '#home' },
     { name: t.nav.services, href: '#services' },
     { name: t.nav.gallery, href: '#gallery' },
-    { name: t.nav.packages, href: '#packages' },
+    { name: t.nav.packages, href: '#creador-de-paquetes' },
     { name: t.nav.contact, href: '#contact' }
   ];
 
